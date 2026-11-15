@@ -159,7 +159,7 @@ page_start(); ?>
         }
     }
     $nHard = count($result['hard']); $nWarn = count($result['warnings']); ?>
-    <a href="#h-dash" class="sticky top-0 z-10 flex flex-wrap items-center gap-2 rounded border border-slate-700 bg-slate-900/95 px-3 py-2 text-sm lg:hidden">
+    <a href="#h-dash" class="sticky top-0 z-10 flex flex-wrap items-center gap-2 rounded border border-slate-700 bg-slate-900 px-3 py-2 text-sm shadow-lg shadow-black/60 lg:hidden">
         <span id="dash-summary-text" class="flex flex-wrap items-center gap-2">
         <?= $nHard ? status_badge('fail', $nHard . ' failure' . ($nHard === 1 ? '' : 's')) : status_badge('ok', 'No failures') ?>
         <?= $nWarn ? status_badge('warn', $nWarn . ' warning' . ($nWarn === 1 ? '' : 's')) : '' ?>
@@ -284,7 +284,7 @@ page_start(); ?>
         </div>
     </section>
 
-    <div class="sticky bottom-0 flex flex-wrap gap-3 border-t border-slate-800 bg-slate-950/95 py-3">
+    <div class="sticky bottom-0 flex flex-wrap gap-3 border-t border-slate-800 bg-slate-950 py-3 shadow-[0_-8px_16px_rgba(0,0,0,0.6)]">
         <button class="<?= btn_secondary() ?>" type="submit" name="action" value="save">Update dashboard</button>
         <button class="<?= btn_primary() ?>" type="submit" name="action" value="review">Review for launch</button>
         <span id="save-state" class="self-center text-xs text-slate-400" aria-live="polite"></span>
