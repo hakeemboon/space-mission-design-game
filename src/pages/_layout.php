@@ -11,7 +11,7 @@ $step     = $step ?? null;
 $segments = $segments ?? null;
 $segmentLabels = ['LAUNCH' => 'Launch', 'SPACE' => 'Space', 'GROUND' => 'Ground', 'USER' => 'User'];
 $statusText = [
-    'todo' => ['Not started', '○', 'border-slate-600 text-slate-300'],
+    'todo' => ['To do', '○', 'border-slate-600 text-slate-300'],
     'ok'   => ['Complete',    '✓', 'border-emerald-500 text-emerald-300'],
     'warn' => ['Warning',     '!', 'border-amber-400 text-amber-300'],
     'fail' => ['Failure',     '✕', 'border-rose-500 text-rose-300'],
@@ -30,16 +30,21 @@ $steps = ['Landing', 'Briefing', 'Objective', 'Requirements', 'Designer', 'Prefl
 <header class="border-b border-slate-800 bg-slate-900/80">
     <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3">
         <a href="/" class="font-semibold tracking-wide">TerraWatch-1 <span class="text-slate-400 font-normal">· Space Mission Design Game</span></a>
-        <nav class="flex gap-4 text-sm text-slate-300">
+        <nav class="flex gap-4 text-sm text-slate-300 md:text-base">
             <a class="hover:text-white underline-offset-4 hover:underline" href="/glossary.php">Help</a>
             <a class="hover:text-white underline-offset-4 hover:underline" href="/sources.php">Sources</a>
             <a class="hover:text-white underline-offset-4 hover:underline" href="/credits.php">Credits</a>
         </nav>
     </div>
     <?php if ($step !== null): ?>
-    <ol class="mx-auto flex max-w-6xl flex-wrap gap-1 px-4 pb-2 text-xs" aria-label="Progress">
+    <?php // Phone: one compact line with a progress bar. Tablet/laptop: all nine steps. ?>
+    <div class="mx-auto max-w-6xl px-4 pb-3 md:hidden">
+        <p class="text-sm text-slate-300">Step <?= (int) $step ?> of <?= count($steps) ?>: <span class="font-semibold text-white"><?= e($steps[$step - 1]) ?></span></p>
+        <div class="mt-1 h-1.5 rounded bg-slate-700" aria-hidden="true"><div class="h-1.5 rounded bg-sky-500" style="width:<?= round($step / count($steps) * 100) ?>%"></div></div>
+    </div>
+    <ol class="mx-auto hidden max-w-6xl flex-wrap gap-1 px-4 pb-3 text-sm md:flex lg:text-base" aria-label="Progress">
         <?php foreach ($steps as $i => $label): $n = $i + 1; ?>
-            <li class="whitespace-nowrap rounded px-2 py-1 <?= $n === $step ? 'bg-sky-600 text-white' : ($n < $step ? 'text-slate-300' : 'text-slate-500') ?>"
+            <li class="whitespace-nowrap rounded px-3 py-1 <?= $n === $step ? 'bg-sky-600 font-semibold text-white' : ($n < $step ? 'text-slate-200' : 'text-slate-400') ?>"
                 <?= $n === $step ? 'aria-current="step"' : '' ?>><?= $n ?>. <?= e($label) ?></li>
         <?php endforeach; ?>
     </ol>
@@ -47,9 +52,9 @@ $steps = ['Landing', 'Briefing', 'Objective', 'Requirements', 'Designer', 'Prefl
     <?php if ($segments !== null): ?>
     <div id="segment-rail" class="mx-auto grid max-w-6xl grid-cols-4 gap-2 px-4 pb-3" aria-label="Mission segments">
         <?php foreach ($segmentLabels as $code => $label): $s = $statusText[$segments[$code] ?? 'todo']; ?>
-            <div data-seg="<?= e($code) ?>" class="rounded border-2 <?= $s[2] ?> px-2 py-1 text-center text-sm">
+            <div data-seg="<?= e($code) ?>" class="rounded border-2 <?= $s[2] ?> px-2 py-1 text-center text-sm md:py-1.5 md:text-base">
                 <span class="font-semibold"><?= e($label) ?></span>
-                <span data-status class="block text-xs"><span aria-hidden="true"><?= $s[1] ?></span> <?= e($s[0]) ?></span>
+                <span data-status class="block whitespace-nowrap text-xs md:text-sm"><span aria-hidden="true"><?= $s[1] ?></span> <?= e($s[0]) ?></span>
             </div>
         <?php endforeach; ?>
     </div>

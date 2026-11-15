@@ -95,7 +95,7 @@
   }
 
   const RAIL = {
-    todo: ['Not started', '○', 'border-slate-600 text-slate-300'],
+    todo: ['To do', '○', 'border-slate-600 text-slate-300'],
     ok: ['Complete', '✓', 'border-emerald-500 text-emerald-300'],
     warn: ['Warning', '!', 'border-amber-400 text-amber-300'],
     fail: ['Failure', '✕', 'border-rose-500 text-rose-300'],
@@ -172,7 +172,7 @@
     const st = segmentStatus(res, n);
     document.querySelectorAll('#segment-rail [data-seg]').forEach(el => {
       const [word, icon, cls] = RAIL[st[el.dataset.seg]];
-      el.className = 'rounded border-2 ' + cls + ' px-2 py-1 text-center text-sm';
+      el.className = 'rounded border-2 ' + cls + ' px-2 py-1 text-center text-sm md:py-1.5 md:text-base';
       el.querySelector('[data-status]').innerHTML = `<span aria-hidden="true">${icon}</span> ${word}`;
     });
 

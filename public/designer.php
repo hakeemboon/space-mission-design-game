@@ -136,7 +136,7 @@ page_start(); ?>
 <div class="flex flex-wrap items-end justify-between gap-3">
     <div>
         <h1 class="text-2xl font-bold">Mission designer</h1>
-        <p class="text-sm text-slate-400">Choose in any order. Press <strong>Update dashboard</strong> to see the consequences, then <strong>Review for launch</strong>.</p>
+        <p class="text-sm text-slate-400">Choose in any order: the dashboard updates as you click. When there are no red failures, press <strong>Review for launch</strong>.</p>
     </div>
     <a class="text-sm text-sky-300 underline" href="/requirements.php">View requirements R1–R6</a>
 </div>
@@ -333,5 +333,5 @@ $twData = engine_js_data() + ['objective' => $m['objective'], 'difficulty' => $m
 ?>
 <script type="application/json" id="tw-data"><?= engine_js_json($twData) ?></script>
 <script src="/assets/js/engine.js?v=1" defer></script>
-<script src="/assets/js/designer.js?v=2" defer></script>
+<script src="/assets/js/designer.js?v=4" defer></script>
 <?php page_end('Designer', 5, segment_status($result, $m), $m);
