@@ -1,0 +1,8 @@
+# Local secrets and machine-specific files
+config/config.local.php
+storage/logs/*
+!storage/logs/.gitkeep
+# 130 MB binary: download per README instead of committing
+tools/tailwindcss.exe
+# Official Space Apps organiser documents (incl. the local-lead judging deck): not for a public repo
+docs/submission/

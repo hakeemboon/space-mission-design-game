@@ -1,0 +1,11 @@
+# TerraWatch-1 — public web root rules. AI-assisted (Claude Code).
+Options -Indexes
+DirectoryIndex index.php
+# Development-only checks are never served on a public host.
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^dev/ - [R=404,L]
+</IfModule>
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+</IfModule>

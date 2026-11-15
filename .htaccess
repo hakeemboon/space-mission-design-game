@@ -1,0 +1,13 @@
+# TerraWatch-1 — Apache guard for hosts where the WHOLE project folder is the web root.
+# AI-assisted (Claude Code). Preferred setup: point the web root at public/ instead.
+# This file sends every request into public/ and refuses the private folders.
+Options -Indexes
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(config|src|database|tests|storage|docs|tools|resources|\.git)(/|$) - [F,L]
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+<FilesMatch "\.(md|sql|sh|log|ini|lock|json|example\.php)$">
+    Require all denied
+</FilesMatch>
