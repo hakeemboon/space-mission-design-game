@@ -32,6 +32,13 @@ page_start(); ?>
         <li>NASA resources listed in the <a class="underline" href="/sources.php">Mission Library</a>.</li>
     </ul>
 
+    <h2 class="pt-2 text-lg font-semibold text-slate-100">Team and licence</h2>
+    <p>Made by <strong>Team Go2Space</strong>: Cabdilaahi Fuaad Muuse, Abdullah Nur, Cabdixakiin Axmed Xasan and Ismail Abdikadir Mohamed.</p>
+    <p>Copyright 2026 Team Go2Space. The game is open source under the
+        <a class="underline" href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener">Apache License 2.0</a>.
+        Source code: <a class="underline" href="https://github.com/hakeemboon/space-mission-design-game" target="_blank" rel="noopener">github.com/hakeemboon/space-mission-design-game</a>.
+        Tailwind CSS is used under the MIT licence; full third-party notices are in the repository’s THIRD_PARTY_LICENSES.md.</p>
+
     <h2 class="pt-2 text-lg font-semibold text-slate-100">Honest limits</h2>
     <p>This is a simplified educational model. It does not propagate orbits, model link budgets, thermal behaviour or attitude control.
         It is not professional engineering software and not a substitute for NASA's General Mission Analysis Tool.
