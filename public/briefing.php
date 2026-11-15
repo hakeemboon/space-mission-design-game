@@ -18,9 +18,19 @@ $segments = [
 $f01 = fact_cards('briefing');
 
 page_start(); ?>
-<h1 class="text-2xl font-bold">Mission briefing</h1>
-<p class="mt-3 max-w-3xl text-slate-300">An Earth-science agency needs a new observation satellite, and you, <?= e($_SESSION['nickname']) ?>, are its Mission Design Lead.
-    Your job is not just to build a spacecraft: a science mission only works if every part of the system works together.</p>
+<div class="grid gap-6 md:grid-cols-[1fr_minmax(0,22rem)] md:items-center">
+    <div>
+        <h1 class="text-2xl font-bold">Mission briefing</h1>
+        <p class="mt-3 max-w-3xl text-slate-300">An Earth-science agency needs a new observation satellite, and you, <?= e($_SESSION['nickname']) ?>, are its Mission Design Lead.
+            Your job is not just to build a spacecraft: a science mission only works if every part of the system works together.</p>
+    </div>
+    <figure>
+        <img src="/assets/img/satellite.webp" width="1200" height="797" loading="lazy"
+             alt="A small generic Earth-observation satellite with two solar panels above Earth (SI-generated image)"
+             class="w-full rounded-lg border border-slate-700 bg-slate-900">
+        <figcaption class="mt-1 text-xs text-slate-400">Artist's impression of a fictional satellite. All hardware in this game is fictional.</figcaption>
+    </figure>
+</div>
 <h2 class="mt-6 text-lg font-semibold">The four mission segments</h2>
 <div class="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
     <?php $i = 1; foreach ($segments as $name => [$what, $choose]): ?>

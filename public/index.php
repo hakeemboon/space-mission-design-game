@@ -29,8 +29,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $existing = current_mission();
 
 page_start(); ?>
-<section class="grid gap-8 md:grid-cols-2 md:items-center">
-    <div>
+<section class="relative isolate overflow-hidden rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-950 to-sky-950 p-6 pb-16 md:p-10 md:pb-16 lg:min-h-[44rem]">
+    <?php // Decorative background (Higgsfield, watermarked). Anchored bottom-right so the watermark is never cropped. ?>
+    <img src="/assets/img/earth-orbit.webp" alt="Earth's curved horizon seen from low orbit at sunrise (SI-generated image)"
+         class="absolute inset-0 -z-10 h-full w-full object-cover object-right-bottom opacity-90" width="1920" height="1080" fetchpriority="high">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-slate-950/90 via-slate-950/50 to-transparent lg:via-transparent" aria-hidden="true"></div>
+    <div class="max-w-xl">
         <p class="text-sm uppercase tracking-widest text-sky-300">NASA Space Apps Challenge 2026 · Space Mission Design Game</p>
         <h1 class="mt-2 text-3xl font-bold md:text-4xl">Design, fly and fix your own Earth-observation mission.</h1>
         <p class="mt-4 text-slate-300">You are the Mission Design Lead for <strong>TerraWatch-1</strong>, a fictional satellite in low Earth orbit.
@@ -38,7 +42,7 @@ page_start(); ?>
             fly it month by month, and redesign until the people who need the data get it.</p>
         <p class="mt-3 text-sm text-slate-400">This is an educational simulator with a simplified model, not professional engineering software.</p>
     </div>
-    <div class="rounded-lg border border-slate-700 bg-slate-900 p-5">
+    <div class="mt-6 max-w-xl rounded-lg border border-slate-700 bg-slate-900/85 p-5 backdrop-blur">
         <?php if ($existing): ?>
             <p class="mb-4 text-sm">You have a mission in progress, <?= e($existing['nickname']) ?>.
                 <a class="font-semibold text-sky-300 underline" href="/designer.php">Continue mission</a></p>

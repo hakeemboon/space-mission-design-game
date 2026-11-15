@@ -54,7 +54,9 @@ $endWords = ['TARGET' => 'Target lifetime reached', 'ENERGY' => 'Power shortfall
 $u = $s['user'];
 
 page_start(); ?>
-<div class="rounded-lg border-2 <?= $banner[2] ?> p-5">
+<div class="relative isolate overflow-hidden rounded-lg border-2 <?= $banner[2] ?> p-5 sm:pb-12">
+    <img src="/assets/img/data-background.webp" width="1920" height="823" alt="Abstract dark-blue data grid (SI-generated image)"
+         class="absolute inset-0 -z-10 hidden h-full w-full object-cover object-right-bottom opacity-90 sm:block">
     <div class="flex flex-wrap items-center justify-between gap-3">
         <h1 class="text-2xl font-bold"><span aria-hidden="true"><?= ['ok' => '✓', 'warn' => '!', 'fail' => '✕'][$banner[0]] ?></span> <?= e($banner[1]) ?></h1>
         <p class="text-lg">Science score <strong class="text-3xl"><?= e(number_format((float) $run['science_score'], 2)) ?></strong> / 100</p>

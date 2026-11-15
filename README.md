@@ -93,6 +93,7 @@ The app must be served from the root of a domain or subdomain, because it uses a
 - **Claude (Anthropic):** researching the NASA resources, writing the planning documents, and calculating expected test values.
 - **Claude Code (Anthropic):** writing the application code and seed data. Every generated file carries an "AI-assisted" comment. The team reviewed the code.
 - **ChatGPT (OpenAI):** project planning and review.
+- **Higgsfield (GPT Image 2.6 model):** the four decorative background images in `public/assets/img/` (Earth from orbit, satellite, mission control, data grid). Each has a visible "SI-generated" watermark burned into the file, and alt text ending "(SI-generated image)". They are decoration only, and all hardware shown is fictional.
 
 The team chose the game concept, the TerraWatch-1 mission direction and the technology. No generated content uses NASA logos, flags or mission identifiers.
 
@@ -100,4 +101,5 @@ The team chose the game concept, the TerraWatch-1 mission direction and the tech
 
 - Tailwind CSS is MIT-licensed.
 - NASA resources are linked, not copied. See the Mission Library.
+- Background images were generated with Higgsfield for this project and are watermarked "SI-generated".
 - The project licence is to be chosen by the team before publishing.

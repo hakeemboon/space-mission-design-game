@@ -18,6 +18,10 @@ page_start(); ?>
         <li><strong>Claude (Anthropic)</strong> assisted with researching the NASA resources, writing the planning documents, and calculating expected values for testing.</li>
         <li><strong>Claude Code (Anthropic)</strong> assisted with writing the application code (HTML, CSS, JavaScript, PHP, SQL) and the seed data. Every generated code and seed file carries a comment saying it was AI-assisted. The team reviewed the code.</li>
         <li><strong>ChatGPT (OpenAI)</strong> assisted with project planning and review.</li>
+        <li><strong>Higgsfield</strong> (GPT Image 2.6 model) generated the four decorative background images: Earth from orbit (start page),
+            the satellite (briefing), the mission control room (simulation) and the abstract data grid (results). Each carries a visible
+            “SI-generated” watermark burned into the image, and its description ends with “(SI-generated image)”. They are decoration only:
+            no information in the game depends on them, and all hardware shown is fictional.</li>
         <li>Game component values are fictional; some were proposed with AI assistance and then checked by the team against the rules by enumeration.</li>
         <li>No generated content uses NASA logos, flags, mission patches or mission identifiers. Any SI-generated image in the game carries a visible “SI-generated” watermark.</li>
     </ul>

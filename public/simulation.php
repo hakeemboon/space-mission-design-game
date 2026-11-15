@@ -37,8 +37,13 @@ $replay = [
 ];
 
 page_start(); ?>
-<h1 class="text-2xl font-bold">Mission simulation</h1>
-<p class="mt-1 text-sm text-slate-400">Run <?= (int) $run['run_number'] ?> · <?= e(design_summary($snap['input'], catalogue())) ?></p>
+<div class="relative isolate overflow-hidden rounded-xl border border-slate-800 bg-slate-900 px-5 py-8">
+    <img src="/assets/img/mission-control.webp" width="1920" height="1080" alt="An empty mission control room at night with blank monitors (SI-generated image)"
+         class="absolute inset-0 -z-10 hidden h-full w-full object-cover object-right-bottom opacity-90 sm:block">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-r from-slate-950/90 via-slate-950/60 to-slate-950/10" aria-hidden="true"></div>
+    <h1 class="text-2xl font-bold">Mission simulation</h1>
+    <p class="mt-1 text-sm text-slate-300">Run <?= (int) $run['run_number'] ?> · <?= e(design_summary($snap['input'], catalogue())) ?></p>
+</div>
 <div class="mt-3"><?= model_label() ?></div>
 
 <section id="replay" class="mt-6 grid gap-6 lg:grid-cols-3" hidden aria-label="Mission replay">
